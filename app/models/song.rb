@@ -10,7 +10,7 @@ class Song < ActiveRecord::Base
     binding.pry
     drake = Artist.find_or_create_by(name: "Drake")
       Song.all.collect do |x|
-          if x.artist.name == "drake" then x end 
+          if x.artist == drake then x end 
       end
   end
 
