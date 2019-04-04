@@ -8,6 +8,6 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     binding.pry
-    Song.find_by self.artist.name = "Drake"
+    Song.find_by artist.name: "Drake"
   end
 end
