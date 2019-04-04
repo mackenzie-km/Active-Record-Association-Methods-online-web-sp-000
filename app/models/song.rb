@@ -8,6 +8,6 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     drake_id = (Artist.find_by name: "Drake").id
-    Song.all.map do {|x| x.artist_id == drake_id}
+    Song.all.map {|x| x.artist_id == drake_id}
   end
 end
