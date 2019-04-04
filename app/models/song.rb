@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     drake = Artist.find_or_create_by(name: "Drake")
-      self.all.collect do |x|
+      Song.all.collect do |x|
           if x.artist == drake then drake end
       end
   end
