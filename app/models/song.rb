@@ -7,11 +7,12 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
+    binding.pry
     drake = Artist.find_by name: 'Drake'
       Song.all.map do |x|
         if x.artist_id == drake.id
           x
         end
       end
-  end 
+  end
 end
