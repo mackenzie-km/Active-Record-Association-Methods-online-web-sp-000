@@ -12,5 +12,5 @@ class Song < ActiveRecord::Base
         if x.artist_id == drake.id
           x
         end
-  end
+      end
 end
