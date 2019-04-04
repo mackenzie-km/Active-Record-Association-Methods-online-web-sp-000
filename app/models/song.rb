@@ -8,13 +8,10 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     binding.pry
-    drake = Artist.find_by name: 'Drake'
-    if drake
-        Song.all.map do |x|
-        if x.artist_id == drake.id
-          x
-        end
+    drake = Artist.find_or_create_by(name: "Drake")
+      Song.all.collect do |x|
+        x.artist_id == drake.id? x : ""
       end
-    end
   end
+  
 end
