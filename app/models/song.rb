@@ -7,7 +7,7 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    binding.pry
-    Song.find_by artist.name: "Drake"
+    drake_id = (Artist.find_by name: "Drake").id
+    Song.all.map do {|x| x.artist_id == drake_id}
   end
 end
